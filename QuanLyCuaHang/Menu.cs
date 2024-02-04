@@ -123,6 +123,7 @@ namespace QuanLyCuaHang
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color6);
+            OpenChildForm(new FormNhanVien());
         }
 
         private void btnAnh_Click(object sender, EventArgs e)
