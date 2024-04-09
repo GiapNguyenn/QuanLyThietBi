@@ -59,6 +59,7 @@
             this.btnCapNhatNV = new FontAwesome.Sharp.IconButton();
             this.btnXoaNV = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridNhanVien)).BeginInit();
             this.SuspendLayout();
@@ -372,12 +373,20 @@
             this.iconButton1.Text = "Thoát";
             this.iconButton1.UseVisualStyleBackColor = true;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(604, 13);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 32;
+            // 
             // FormNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(889, 544);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.btnXoaNV);
             this.Controls.Add(this.btnCapNhatNV);
@@ -445,6 +454,7 @@
         private FontAwesome.Sharp.IconButton btnCapNhatNV;
         private FontAwesome.Sharp.IconButton btnXoaNV;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 
 
