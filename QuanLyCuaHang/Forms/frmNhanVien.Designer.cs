@@ -28,8 +28,8 @@
         /// </summary>
             private void InitializeComponent()
             {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -139,10 +139,10 @@
             // txtNgayCong
             // 
             this.txtNgayCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNgayCong.Location = new System.Drawing.Point(170, 262);
+            this.txtNgayCong.Location = new System.Drawing.Point(183, 262);
             this.txtNgayCong.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtNgayCong.Name = "txtNgayCong";
-            this.txtNgayCong.Size = new System.Drawing.Size(202, 20);
+            this.txtNgayCong.Size = new System.Drawing.Size(189, 20);
             this.txtNgayCong.TabIndex = 12;
             // 
             // label7
@@ -159,28 +159,28 @@
             // txtDiaChi
             // 
             this.txtDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiaChi.Location = new System.Drawing.Point(170, 216);
+            this.txtDiaChi.Location = new System.Drawing.Point(183, 216);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(202, 20);
+            this.txtDiaChi.Size = new System.Drawing.Size(189, 20);
             this.txtDiaChi.TabIndex = 15;
             // 
             // dataGridNhanVien
             // 
             this.dataGridNhanVien.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridNhanVien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridNhanVien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridNhanVien.BackgroundColor = System.Drawing.Color.Silver;
             this.dataGridNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridNhanVien.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridNhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridNhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridNhanVien.EnableHeadersVisualStyles = false;
             this.dataGridNhanVien.GridColor = System.Drawing.Color.Blue;
@@ -190,6 +190,7 @@
             this.dataGridNhanVien.ReadOnly = true;
             this.dataGridNhanVien.Size = new System.Drawing.Size(594, 288);
             this.dataGridNhanVien.TabIndex = 16;
+            this.dataGridNhanVien.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridNhanVien_RowHeaderMouseClick);
             // 
             // label8
             // 
@@ -209,6 +210,7 @@
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(234, 26);
             this.txtTimKiem.TabIndex = 24;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // lblLuong
             // 
@@ -343,7 +345,7 @@
             // 
             this.radNu.AutoSize = true;
             this.radNu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radNu.Location = new System.Drawing.Point(276, 172);
+            this.radNu.Location = new System.Drawing.Point(328, 176);
             this.radNu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.radNu.Name = "radNu";
             this.radNu.Size = new System.Drawing.Size(44, 20);
@@ -357,7 +359,7 @@
             // 
             this.radNam.AutoSize = true;
             this.radNam.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radNam.Location = new System.Drawing.Point(170, 172);
+            this.radNam.Location = new System.Drawing.Point(170, 176);
             this.radNam.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.radNam.Name = "radNam";
             this.radNam.Size = new System.Drawing.Size(57, 20);
@@ -370,10 +372,10 @@
             // dateNam
             // 
             this.dateNam.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateNam.Location = new System.Drawing.Point(170, 118);
+            this.dateNam.Location = new System.Drawing.Point(183, 118);
             this.dateNam.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dateNam.Name = "dateNam";
-            this.dateNam.Size = new System.Drawing.Size(202, 29);
+            this.dateNam.Size = new System.Drawing.Size(189, 29);
             this.dateNam.TabIndex = 28;
             // 
             // groupBox2

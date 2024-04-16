@@ -133,7 +133,25 @@ namespace QuanLyCuaHang.Connection
                 };
                 return data4;
             }
-        
+            public DataTable TimKiem(string query, string keyword)
+            {
+                DataTable data = new DataTable();
+                using (SqlConnection connection = new SqlConnection(connectQL))
+                {
+                    connection.Open(); // Mở kết nối đến cơ sở dữ liệu
+                    SqlCommand cmd = new SqlCommand(query, connection);
+                    cmd.Parameters.AddWithValue("@keyword", keyword);
+
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                    adapter.Fill(data);
+                    connection.Close();
+
+                };
+                return data;
+            }
+
 
             public DataTable TaoBang(string sql)
             {
