@@ -103,5 +103,35 @@ namespace QuanLyCuaHang.Forms
                 gioiTinh = "Nữ";
             }
         }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            string keyword = txtTimKiem.Text;
+            string query = "EXEC TNG_TimKiem @keyword";
+            dataGridNhanVien.DataSource = QueryConnection.Query.TimKiem(query, keyword);
+        }
+
+        private void dataGridNhanVien_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            txtMaNV.Text = dataGridNhanVien.Rows[rowIndex].Cells[0].Value.ToString();
+            txtTenNhanVien.Text = dataGridNhanVien.Rows[rowIndex].Cells[1].Value.ToString();
+            DateTime ngaySinh;
+            if (DateTime.TryParse(dataGridNhanVien.Rows[rowIndex].Cells[2].Value.ToString(), out ngaySinh))
+            {
+                dateNam.Value = ngaySinh;
+            }
+            string gioiTinh = dataGridNhanVien.Rows[rowIndex].Cells[3].Value.ToString();
+            if (gioiTinh == "Nam")
+            {
+                radNam.Checked = true;
+            }
+            else if (gioiTinh == "Nữ")
+            {
+                radNu.Checked = true;
+            }
+            txtDiaChi.Text = dataGridNhanVien.Rows[rowIndex].Cells[4].Value.ToString();
+            txtNgayCong.Text = dataGridNhanVien.Rows[rowIndex].Cells[5].Value.ToString();
+        }
     }
 }

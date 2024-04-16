@@ -25,7 +25,7 @@ namespace QuanLyCuaHang.Connection
             }
             private set => query = value;
         }
-        public QueryConnection() 
+        public QueryConnection()
         {
             SqlConnection con = new SqlConnection("Data Source=10.0.40.206;Initial Catalog=QuanLyBanHang;Persist Security Info=True;User ID=win;Password=1;Encrypt=False");
         }
@@ -103,52 +103,73 @@ namespace QuanLyCuaHang.Connection
             }
 
             return data;
-        public DataTable UpdateData(string query,string manv, string name, DateTime date,string gioiTinh, string diachi, int ngaycong)    
-        {
-            DataTable data4 = new DataTable();
-            using (SqlConnection connection = new SqlConnection(connectQL))
+        }
+            public DataTable UpdateData(string query, string manv, string name, DateTime date, string gioiTinh, string diachi, int ngaycong)
             {
-                connection.Open(); // Mở kết nối đến cơ sở dữ liệu
-
-                SqlCommand cmd = new SqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@id", manv);
-                cmd.Parameters.AddWithValue("@name", name);
-                cmd.Parameters.AddWithValue("@date", date);
-                cmd.Parameters.AddWithValue("@gioitinh", gioiTinh);
-                cmd.Parameters.AddWithValue("@diachi", diachi);
-                cmd.Parameters.AddWithValue("@ngaycong", ngaycong);
-                int rowsAffected = cmd.ExecuteNonQuery();
-
-                if (rowsAffected > 0)
+                DataTable data4 = new DataTable();
+                using (SqlConnection connection = new SqlConnection(connectQL))
                 {
-                    MessageBox.Show("Cập nhật dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
+                    connection.Open(); // Mở kết nối đến cơ sở dữ liệu
+
+                    SqlCommand cmd = new SqlCommand(query, connection);
+                    cmd.Parameters.AddWithValue("@id", manv);
+                    cmd.Parameters.AddWithValue("@name", name);
+                    cmd.Parameters.AddWithValue("@date", date);
+                    cmd.Parameters.AddWithValue("@gioitinh", gioiTinh);
+                    cmd.Parameters.AddWithValue("@diachi", diachi);
+                    cmd.Parameters.AddWithValue("@ngaycong", ngaycong);
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Cập nhật dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không có dữ liệu nào được cập nhật", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    connection.Close();
+
+                };
+                return data4;
+            }
+            public DataTable TimKiem(string query, string keyword)
+            {
+                DataTable data = new DataTable();
+                using (SqlConnection connection = new SqlConnection(connectQL))
                 {
-                    MessageBox.Show("Không có dữ liệu nào được cập nhật", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                connection.Close();
+                    connection.Open(); // Mở kết nối đến cơ sở dữ liệu
+                    SqlCommand cmd = new SqlCommand(query, connection);
+                    cmd.Parameters.AddWithValue("@keyword", keyword);
 
-            };
-            return data4;
-=======
-        public DataTable TaoBang(string sql)
-        {
-            con = Getcon();
-            SqlDataAdapter ad = new SqlDataAdapter(sql, con);
-            DataTable dt = new DataTable();
-            ad.Fill(dt);
-            return dt;
-        }
-        public void ExcuteNonQuery(string sql)
-        {
-            con = Getcon();
-            command = new SqlCommand(sql, con);
-            con.Open();
-            command.ExecuteNonQuery();
-            con.Close();
-            con.Dispose();
 
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                    adapter.Fill(data);
+                    connection.Close();
+
+                };
+                return data;
+            }
+
+
+            public DataTable TaoBang(string sql)
+            {
+                con = Getcon();
+                SqlDataAdapter ad = new SqlDataAdapter(sql, con);
+                DataTable dt = new DataTable();
+                ad.Fill(dt);
+                return dt;
+            }
+            public void ExcuteNonQuery(string sql)
+            {
+                con = Getcon();
+                command = new SqlCommand(sql, con);
+                con.Open();
+                command.ExecuteNonQuery();
+                con.Close();
+                con.Dispose();
+
+            }
         }
-    }
-}
+    } 
