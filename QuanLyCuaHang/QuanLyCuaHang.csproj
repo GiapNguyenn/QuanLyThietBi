@@ -54,6 +54,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connection\QueryConnection.cs" />
     <Compile Include="Forms\FormNhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
