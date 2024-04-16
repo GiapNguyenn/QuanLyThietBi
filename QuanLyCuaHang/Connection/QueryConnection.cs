@@ -6,11 +6,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Markup;
 
 namespace QuanLyCuaHang.Connection
 {
     internal class QueryConnection
     {
+        SqlConnection con;
+        SqlCommand command;
+        SqlDataAdapter adapter;
         private static QueryConnection query;
         public static QueryConnection Query
         {
@@ -21,9 +25,17 @@ namespace QuanLyCuaHang.Connection
             }
             private set => query = value;
         }
-        private QueryConnection() { }
+        public QueryConnection() 
+        {
+            SqlConnection con = new SqlConnection("Data Source=10.0.40.206;Initial Catalog=QuanLyBanHang;Persist Security Info=True;User ID=win;Password=1;Encrypt=False");
+        }
 
         private string connectQL = "Data Source=10.0.40.206;Initial Catalog=QuanLyBanHang;Persist Security Info=True;User ID=win;Password=1;Encrypt=False";
+        public SqlConnection Getcon()
+        {
+            return new SqlConnection("Data Source=10.0.40.206;Initial Catalog=QuanLyBanHang;Persist Security Info=True;User ID=win;Password=1;Encrypt=False");
+
+        }
 
         public DataTable LayAllDanhSach(string query)
         {
@@ -91,7 +103,6 @@ namespace QuanLyCuaHang.Connection
             }
 
             return data;
-        }
         public DataTable UpdateData(string query,string manv, string name, DateTime date,string gioiTinh, string diachi, int ngaycong)    
         {
             DataTable data4 = new DataTable();
@@ -120,6 +131,24 @@ namespace QuanLyCuaHang.Connection
 
             };
             return data4;
+=======
+        public DataTable TaoBang(string sql)
+        {
+            con = Getcon();
+            SqlDataAdapter ad = new SqlDataAdapter(sql, con);
+            DataTable dt = new DataTable();
+            ad.Fill(dt);
+            return dt;
+        }
+        public void ExcuteNonQuery(string sql)
+        {
+            con = Getcon();
+            command = new SqlCommand(sql, con);
+            con.Open();
+            command.ExecuteNonQuery();
+            con.Close();
+            con.Dispose();
+
         }
     }
 }

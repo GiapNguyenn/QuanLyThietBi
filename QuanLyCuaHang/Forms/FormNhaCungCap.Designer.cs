@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSua = new FontAwesome.Sharp.IconButton();
@@ -44,14 +45,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvNhaCungCap = new System.Windows.Forms.DataGridView();
+            this.maNhaCungCapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenNhaCungCapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hotlineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblNhaCungCapBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nhaCungCapDataSet = new QuanLyCuaHang.NhaCungCapDataSet();
+            this.tblNhaCungCapTableAdapter = new QuanLyCuaHang.NhaCungCapDataSetTableAdapters.tblNhaCungCapTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNhaCungCap)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblNhaCungCapBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nhaCungCapDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -102,12 +112,13 @@
             this.btnSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSua.IconSize = 20;
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(737, 169);
+            this.btnSua.Location = new System.Drawing.Point(805, 154);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 23);
             this.btnSua.TabIndex = 12;
             this.btnSua.Text = "&Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -116,12 +127,13 @@
             this.btnXoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnXoa.IconSize = 20;
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(737, 122);
+            this.btnXoa.Location = new System.Drawing.Point(805, 107);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 11;
             this.btnXoa.Text = "&Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -130,13 +142,14 @@
             this.btnThem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThem.IconSize = 20;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(737, 73);
+            this.btnThem.Location = new System.Drawing.Point(805, 58);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
             this.btnThem.TabIndex = 10;
             this.btnThem.Text = "&Thêm ";
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnTimKiem
             // 
@@ -151,6 +164,7 @@
             this.btnTimKiem.Text = "&Tìm Kiếm ";
             this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // txtTimKiem
             // 
@@ -161,14 +175,14 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(512, 89);
+            this.txtEmail.Location = new System.Drawing.Point(588, 86);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 22);
+            this.txtEmail.Size = new System.Drawing.Size(180, 22);
             this.txtEmail.TabIndex = 7;
             // 
             // txtHotline
             // 
-            this.txtHotline.Location = new System.Drawing.Point(349, 88);
+            this.txtHotline.Location = new System.Drawing.Point(434, 86);
             this.txtHotline.Name = "txtHotline";
             this.txtHotline.Size = new System.Drawing.Size(100, 22);
             this.txtHotline.TabIndex = 6;
@@ -177,7 +191,7 @@
             // 
             this.txtTenNhaCC.Location = new System.Drawing.Point(209, 86);
             this.txtTenNhaCC.Name = "txtTenNhaCC";
-            this.txtTenNhaCC.Size = new System.Drawing.Size(100, 22);
+            this.txtTenNhaCC.Size = new System.Drawing.Size(166, 22);
             this.txtTenNhaCC.TabIndex = 5;
             // 
             // txtMaNhaCC
@@ -191,7 +205,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(509, 58);
+            this.label4.Location = new System.Drawing.Point(585, 55);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 16);
             this.label4.TabIndex = 3;
@@ -201,7 +215,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(346, 58);
+            this.label3.Location = new System.Drawing.Point(431, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 16);
             this.label3.TabIndex = 2;
@@ -229,7 +243,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dgvNhaCungCap);
             this.groupBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(4, 4);
             this.groupBox2.Name = "groupBox2";
@@ -238,13 +252,63 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh Sách Nhà Cung Cấp ";
             // 
-            // dataGridView1
+            // dgvNhaCungCap
             // 
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 18);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(914, 285);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvNhaCungCap.AutoGenerateColumns = false;
+            this.dgvNhaCungCap.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.maNhaCungCapDataGridViewTextBoxColumn,
+            this.tenNhaCungCapDataGridViewTextBoxColumn,
+            this.hotlineDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn});
+            this.dgvNhaCungCap.DataSource = this.tblNhaCungCapBindingSource;
+            this.dgvNhaCungCap.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvNhaCungCap.Location = new System.Drawing.Point(3, 18);
+            this.dgvNhaCungCap.Name = "dgvNhaCungCap";
+            this.dgvNhaCungCap.Size = new System.Drawing.Size(914, 285);
+            this.dgvNhaCungCap.TabIndex = 0;
+            this.dgvNhaCungCap.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhaCungCap_CellContentClick);
+            // 
+            // maNhaCungCapDataGridViewTextBoxColumn
+            // 
+            this.maNhaCungCapDataGridViewTextBoxColumn.DataPropertyName = "MaNhaCungCap";
+            this.maNhaCungCapDataGridViewTextBoxColumn.HeaderText = "Mã nhà cung cấp";
+            this.maNhaCungCapDataGridViewTextBoxColumn.Name = "maNhaCungCapDataGridViewTextBoxColumn";
+            this.maNhaCungCapDataGridViewTextBoxColumn.Width = 210;
+            // 
+            // tenNhaCungCapDataGridViewTextBoxColumn
+            // 
+            this.tenNhaCungCapDataGridViewTextBoxColumn.DataPropertyName = "TenNhaCungCap";
+            this.tenNhaCungCapDataGridViewTextBoxColumn.HeaderText = "Tên nhà cung cấp ";
+            this.tenNhaCungCapDataGridViewTextBoxColumn.Name = "tenNhaCungCapDataGridViewTextBoxColumn";
+            this.tenNhaCungCapDataGridViewTextBoxColumn.Width = 220;
+            // 
+            // hotlineDataGridViewTextBoxColumn
+            // 
+            this.hotlineDataGridViewTextBoxColumn.DataPropertyName = "Hotline";
+            this.hotlineDataGridViewTextBoxColumn.HeaderText = "Hotline";
+            this.hotlineDataGridViewTextBoxColumn.Name = "hotlineDataGridViewTextBoxColumn";
+            this.hotlineDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.Width = 240;
+            // 
+            // tblNhaCungCapBindingSource
+            // 
+            this.tblNhaCungCapBindingSource.DataMember = "tblNhaCungCap";
+            this.tblNhaCungCapBindingSource.DataSource = this.nhaCungCapDataSet;
+            // 
+            // nhaCungCapDataSet
+            // 
+            this.nhaCungCapDataSet.DataSetName = "NhaCungCapDataSet";
+            this.nhaCungCapDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tblNhaCungCapTableAdapter
+            // 
+            this.tblNhaCungCapTableAdapter.ClearBeforeFill = true;
             // 
             // FormNhaCungCap
             // 
@@ -254,6 +318,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "FormNhaCungCap";
             this.Text = "FormNhaCungCap";
+            this.Load += new System.EventHandler(this.FormNhaCungCap_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -261,7 +326,9 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNhaCungCap)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblNhaCungCapBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nhaCungCapDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -284,6 +351,13 @@
         private FontAwesome.Sharp.IconButton btnXoa;
         private FontAwesome.Sharp.IconButton btnThem;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvNhaCungCap;
+        private NhaCungCapDataSet nhaCungCapDataSet;
+        private System.Windows.Forms.BindingSource tblNhaCungCapBindingSource;
+        private NhaCungCapDataSetTableAdapters.tblNhaCungCapTableAdapter tblNhaCungCapTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maNhaCungCapDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenNhaCungCapDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hotlineDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
     }
 }
