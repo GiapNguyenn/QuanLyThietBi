@@ -33,6 +33,17 @@ namespace QuanLyCuaHang.Forms
 
         private void btnThemNV_Click(object sender, EventArgs e)
         {
+            string maNV=txtMaNV.Text;
+            string tenNV = txtTenNhanVien.Text;
+            string gioiTinh = radNam.Checked ? "Nam" : (radNu.Checked ? "Nữ" :"" ) ;//toán tử 3 ngôi
+            DateTime namSinh = dateNam.Value;
+            string diaChi = txtDiaChi.Text;
+            int ngayCong = int.Parse(txtNgayCong.Text);
+            string query = "EXEC TNG_InsertNhanVien @id,@name,@date,@gioitinh,@diachi,@ngaycong";
+            QueryConnection.Query.InsertNhanVien(query,maNV,tenNV,gioiTinh,namSinh,diaChi,ngayCong);
+            string newdl = "EXEC TNG_TimKiemAllNhanVien";
+            dataGridNhanVien.DataSource = QueryConnection.Query.LayAllDanhSach(newdl);
+
 
         }
 
