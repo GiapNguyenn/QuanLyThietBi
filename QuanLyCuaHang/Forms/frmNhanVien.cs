@@ -13,6 +13,7 @@ namespace QuanLyCuaHang.Forms
 {
     public partial class frmNhanVien : Form
     {
+        string gioiTinh;
         public frmNhanVien()
         {
             InitializeComponent();
@@ -61,6 +62,45 @@ namespace QuanLyCuaHang.Forms
             else
             {
                 MessageBox.Show("Vui lòng chọn dòng cần xoá", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnCapNhatNV_Click(object sender, EventArgs e)
+        {
+            if(dataGridNhanVien.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataGridNhanVien.SelectedRows[0];
+                string maNV = txtMaNV.Text;
+                string tenNV = txtTenNhanVien.Text;
+                DateTime namSinh = dateNam.Value;
+                string gioitinh =gioiTinh;
+                string diaChi = txtDiaChi.Text;
+                int ngayCong = Convert.ToInt32(txtNgayCong.Text);
+                string query = " EXEC TNG_UpDateNhanVien @id,@name,@date,@gioitinh,@diachi,@ngaycong ";
+                QueryConnection.Query.UpdateData(query,maNV ,tenNV, namSinh,gioitinh, diaChi, ngayCong);
+                string query2 = "EXEC TNG_TimKiemAllNhanVien";
+                dataGridNhanVien.DataSource = QueryConnection.Query.LayAllDanhSach(query2);
+            }    
+            else
+            {
+                MessageBox.Show("Vui lòng chọn dòng cần cập nhật");
+            }    
+
+        }
+
+        private void radNam_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radNam.Checked)
+            {
+                gioiTinh = "Nam";
+            }
+        }
+
+        private void radNu_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radNu.Checked)
+            {
+                gioiTinh = "Nữ";
             }
         }
     }
