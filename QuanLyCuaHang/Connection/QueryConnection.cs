@@ -92,5 +92,34 @@ namespace QuanLyCuaHang.Connection
 
             return data;
         }
+        public DataTable UpdateData(string query,string manv, string name, DateTime date,string gioiTinh, string diachi, int ngaycong)    
+        {
+            DataTable data4 = new DataTable();
+            using (SqlConnection connection = new SqlConnection(connectQL))
+            {
+                connection.Open(); // Mở kết nối đến cơ sở dữ liệu
+
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@id", manv);
+                cmd.Parameters.AddWithValue("@name", name);
+                cmd.Parameters.AddWithValue("@date", date);
+                cmd.Parameters.AddWithValue("@gioitinh", gioiTinh);
+                cmd.Parameters.AddWithValue("@diachi", diachi);
+                cmd.Parameters.AddWithValue("@ngaycong", ngaycong);
+                int rowsAffected = cmd.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Cập nhật dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Không có dữ liệu nào được cập nhật", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                connection.Close();
+
+            };
+            return data4;
+        }
     }
 }
