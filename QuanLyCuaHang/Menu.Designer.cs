@@ -36,7 +36,6 @@
             this.btnSanPham = new FontAwesome.Sharp.IconButton();
             this.btnTrangChu = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.btnAnh = new System.Windows.Forms.PictureBox();
             this.btnHome = new System.Windows.Forms.PictureBox();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.btnMinized = new FontAwesome.Sharp.IconButton();
@@ -46,17 +45,18 @@
             this.iconCurrentChildFor = new FontAwesome.Sharp.IconPictureBox();
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panelDeskTop = new System.Windows.Forms.Panel();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAnh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildFor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(13)))), ((int)(((byte)(40)))));
             this.panelMenu.Controls.Add(this.btnNhanVien);
             this.panelMenu.Controls.Add(this.btnKhoHang);
             this.panelMenu.Controls.Add(this.btnTaoDonHang);
@@ -72,9 +72,11 @@
             // 
             // btnNhanVien
             // 
+            this.btnNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(13)))), ((int)(((byte)(40)))));
             this.btnNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnNhanVien.FlatAppearance.BorderSize = 0;
             this.btnNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNhanVien.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNhanVien.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnNhanVien.IconChar = FontAwesome.Sharp.IconChar.Users;
             this.btnNhanVien.IconColor = System.Drawing.Color.Gainsboro;
@@ -89,14 +91,16 @@
             this.btnNhanVien.Text = "Nhân Viên ";
             this.btnNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNhanVien.UseVisualStyleBackColor = true;
+            this.btnNhanVien.UseVisualStyleBackColor = false;
             this.btnNhanVien.Click += new System.EventHandler(this.btnNhanVien_Click);
             // 
             // btnKhoHang
             // 
+            this.btnKhoHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(13)))), ((int)(((byte)(40)))));
             this.btnKhoHang.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnKhoHang.FlatAppearance.BorderSize = 0;
             this.btnKhoHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKhoHang.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKhoHang.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnKhoHang.IconChar = FontAwesome.Sharp.IconChar.Warehouse;
             this.btnKhoHang.IconColor = System.Drawing.Color.Gainsboro;
@@ -111,14 +115,16 @@
             this.btnKhoHang.Text = "Kho hàng ";
             this.btnKhoHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKhoHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnKhoHang.UseVisualStyleBackColor = true;
+            this.btnKhoHang.UseVisualStyleBackColor = false;
             this.btnKhoHang.Click += new System.EventHandler(this.btnKhoHang_Click);
             // 
             // btnTaoDonHang
             // 
+            this.btnTaoDonHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(13)))), ((int)(((byte)(40)))));
             this.btnTaoDonHang.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTaoDonHang.FlatAppearance.BorderSize = 0;
             this.btnTaoDonHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTaoDonHang.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaoDonHang.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnTaoDonHang.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
             this.btnTaoDonHang.IconColor = System.Drawing.Color.Gainsboro;
@@ -133,14 +139,16 @@
             this.btnTaoDonHang.Text = "Tạo đơn hàng ";
             this.btnTaoDonHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTaoDonHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTaoDonHang.UseVisualStyleBackColor = true;
+            this.btnTaoDonHang.UseVisualStyleBackColor = false;
             this.btnTaoDonHang.Click += new System.EventHandler(this.btnTaoDonHang_Click);
             // 
             // btnNhaCungCap
             // 
+            this.btnNhaCungCap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(13)))), ((int)(((byte)(40)))));
             this.btnNhaCungCap.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnNhaCungCap.FlatAppearance.BorderSize = 0;
             this.btnNhaCungCap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNhaCungCap.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNhaCungCap.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnNhaCungCap.IconChar = FontAwesome.Sharp.IconChar.Handshake;
             this.btnNhaCungCap.IconColor = System.Drawing.Color.Gainsboro;
@@ -155,14 +163,16 @@
             this.btnNhaCungCap.Text = "Nhà cung cấp ";
             this.btnNhaCungCap.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNhaCungCap.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNhaCungCap.UseVisualStyleBackColor = true;
+            this.btnNhaCungCap.UseVisualStyleBackColor = false;
             this.btnNhaCungCap.Click += new System.EventHandler(this.btnNhaCungCap_Click);
             // 
             // btnSanPham
             // 
+            this.btnSanPham.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(13)))), ((int)(((byte)(40)))));
             this.btnSanPham.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSanPham.FlatAppearance.BorderSize = 0;
             this.btnSanPham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSanPham.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSanPham.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnSanPham.IconChar = FontAwesome.Sharp.IconChar.Shopify;
             this.btnSanPham.IconColor = System.Drawing.Color.Gainsboro;
@@ -177,14 +187,16 @@
             this.btnSanPham.Text = "Sản Phẩm ";
             this.btnSanPham.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSanPham.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSanPham.UseVisualStyleBackColor = true;
+            this.btnSanPham.UseVisualStyleBackColor = false;
             this.btnSanPham.Click += new System.EventHandler(this.btnSanPham_Click);
             // 
             // btnTrangChu
             // 
+            this.btnTrangChu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(13)))), ((int)(((byte)(40)))));
             this.btnTrangChu.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTrangChu.FlatAppearance.BorderSize = 0;
             this.btnTrangChu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTrangChu.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTrangChu.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnTrangChu.IconChar = FontAwesome.Sharp.IconChar.House;
             this.btnTrangChu.IconColor = System.Drawing.Color.Gainsboro;
@@ -199,30 +211,19 @@
             this.btnTrangChu.Text = "Trang Chủ ";
             this.btnTrangChu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTrangChu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTrangChu.UseVisualStyleBackColor = true;
+            this.btnTrangChu.UseVisualStyleBackColor = false;
             this.btnTrangChu.Click += new System.EventHandler(this.btnTrangChu_Click);
             // 
             // panelLogo
             // 
             this.panelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelLogo.Controls.Add(this.btnAnh);
+            this.panelLogo.Controls.Add(this.guna2PictureBox1);
             this.panelLogo.Controls.Add(this.btnHome);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(220, 140);
             this.panelLogo.TabIndex = 0;
-            // 
-            // btnAnh
-            // 
-            this.btnAnh.Image = global::QuanLyCuaHang.Properties.Resources.Screenshot_2024_01_26_162950;
-            this.btnAnh.Location = new System.Drawing.Point(0, 0);
-            this.btnAnh.Name = "btnAnh";
-            this.btnAnh.Size = new System.Drawing.Size(220, 134);
-            this.btnAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnAnh.TabIndex = 1;
-            this.btnAnh.TabStop = false;
-            this.btnAnh.Click += new System.EventHandler(this.btnAnh_Click);
             // 
             // btnHome
             // 
@@ -235,7 +236,7 @@
             // 
             // panelTitleBar
             // 
-            this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(13)))), ((int)(((byte)(40)))));
             this.panelTitleBar.Controls.Add(this.btnMinized);
             this.panelTitleBar.Controls.Add(this.btnExit);
             this.panelTitleBar.Controls.Add(this.lblTitleChildForm);
@@ -279,10 +280,11 @@
             // lblTitleChildForm
             // 
             this.lblTitleChildForm.AutoSize = true;
+            this.lblTitleChildForm.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitleChildForm.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblTitleChildForm.Location = new System.Drawing.Point(78, 46);
             this.lblTitleChildForm.Name = "lblTitleChildForm";
-            this.lblTitleChildForm.Size = new System.Drawing.Size(38, 13);
+            this.lblTitleChildForm.Size = new System.Drawing.Size(40, 13);
             this.lblTitleChildForm.TabIndex = 1;
             this.lblTitleChildForm.Text = "Home ";
             // 
@@ -315,7 +317,7 @@
             // 
             // panelShadow
             // 
-            this.panelShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
+            this.panelShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(13)))), ((int)(((byte)(40)))));
             this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelShadow.Location = new System.Drawing.Point(220, 80);
             this.panelShadow.Name = "panelShadow";
@@ -324,12 +326,25 @@
             // 
             // panelDeskTop
             // 
-            this.panelDeskTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.panelDeskTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(13)))), ((int)(((byte)(40)))));
             this.panelDeskTop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDeskTop.Location = new System.Drawing.Point(220, 89);
             this.panelDeskTop.Name = "panelDeskTop";
             this.panelDeskTop.Size = new System.Drawing.Size(909, 583);
             this.panelDeskTop.TabIndex = 3;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(13)))), ((int)(((byte)(41)))));
+            this.guna2PictureBox1.BorderRadius = 10;
+            this.guna2PictureBox1.Image = global::QuanLyCuaHang.Properties.Resources.Develop;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(220, 140);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 1;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // Menu
             // 
@@ -342,13 +357,14 @@
             this.Controls.Add(this.panelMenu);
             this.Name = "Menu";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnAnh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildFor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -372,7 +388,7 @@
         private FontAwesome.Sharp.IconButton btnExit;
         private FontAwesome.Sharp.IconButton btnMax;
         private FontAwesome.Sharp.IconButton btnMinized;
-        private System.Windows.Forms.PictureBox btnAnh;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }
 }
 

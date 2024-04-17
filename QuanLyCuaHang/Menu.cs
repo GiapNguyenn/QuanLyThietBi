@@ -9,13 +9,16 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using Color = System.Drawing.Color;
+using Panel = System.Windows.Forms.Panel;
 
 namespace QuanLyCuaHang
 {
     public partial class Menu : Form
     {
+        private frmLogin login;
         // fields
         private IconButton currentBtn;
         private Panel leftBorderBtn;
@@ -31,6 +34,7 @@ namespace QuanLyCuaHang
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            
         }
         private struct RGBColors
         {
@@ -165,6 +169,11 @@ namespace QuanLyCuaHang
         private void btnMinized_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
