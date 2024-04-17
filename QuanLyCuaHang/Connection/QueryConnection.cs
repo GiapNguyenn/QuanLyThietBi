@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Markup;
+using System.Windows.Input;
 
 namespace QuanLyCuaHang.Connection
 {
@@ -151,7 +152,29 @@ namespace QuanLyCuaHang.Connection
                 };
                 return data;
             }
-
+             public DataTable Login(string query,string user ,string password)
+             {
+                 DataTable data = new DataTable();
+                using (SqlConnection connection = new SqlConnection(connectQL))
+                {
+                    connection.Open(); // Mở kết nối đến cơ sở dữ liệu
+                    SqlCommand cmd = new SqlCommand(query, connection);
+                    cmd.Parameters.AddWithValue("@user",user );
+                    cmd.Parameters.AddWithValue("@password", password);
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    
+                    adapter.Fill(data);
+                    int count = (int)cmd.ExecuteScalar(); 
+                    connection.Close();
+                    if(count > 0)
+                    {
+                        Menu menu = new Menu();
+                        menu.ShowDialog();
+                    }    
+                };
+                return data;
+             }
+    
 
             public DataTable TaoBang(string sql)
             {
