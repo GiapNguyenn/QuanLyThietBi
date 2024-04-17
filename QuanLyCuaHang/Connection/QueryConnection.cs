@@ -140,7 +140,7 @@ namespace QuanLyCuaHang.Connection
                 {
                     connection.Open(); // Mở kết nối đến cơ sở dữ liệu
                     SqlCommand cmd = new SqlCommand(query, connection);
-                    cmd.Parameters.AddWithValue("@keyword", keyword);
+                    cmd.Parameters.AddWithValue("@keyword", keyword.Trim());
 
 
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -169,7 +169,6 @@ namespace QuanLyCuaHang.Connection
                 command.ExecuteNonQuery();
                 con.Close();
                 con.Dispose();
-
             }
         }
     } 

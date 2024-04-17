@@ -61,6 +61,16 @@ namespace QuanLyCuaHang.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Develop {
+            get {
+                object obj = ResourceManager.GetObject("Develop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon gement_vector_icon_png_image_3710720 {
@@ -86,6 +96,16 @@ namespace QuanLyCuaHang.Properties {
         internal static System.Drawing.Bitmap Screenshot_2024_01_26_162950 {
             get {
                 object obj = ResourceManager.GetObject("Screenshot 2024-01-26 162950", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Thiết_kế_chưa_có_tên {
+            get {
+                object obj = ResourceManager.GetObject("Thiết_kế_chưa_có_tên", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
