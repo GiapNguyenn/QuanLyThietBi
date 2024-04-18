@@ -28,13 +28,13 @@ namespace QuanLyCuaHang.Connection
         }
         public QueryConnection()
         {
-            SqlConnection con = new SqlConnection("Data Source=10.0.40.206;Initial Catalog=QuanLyBanHang;Persist Security Info=True;User ID=win;Password=1;Encrypt=False");
+            SqlConnection con = new SqlConnection("Data Source=10.0.39.191;Initial Catalog=QuanLyBanHang;Persist Security Info=True;User ID=win;Password=1;Encrypt=False");
         }
 
-        private string connectQL = "Data Source=10.0.40.206;Initial Catalog=QuanLyBanHang;Persist Security Info=True;User ID=win;Password=1;Encrypt=False";
+        private string connectQL = "Data Source=10.0.39.191;Initial Catalog=QuanLyBanHang;Persist Security Info=True;User ID=win;Password=1;Encrypt=False";
         public SqlConnection Getcon()
         {
-            return new SqlConnection("Data Source=10.0.40.206;Initial Catalog=QuanLyBanHang;Persist Security Info=True;User ID=win;Password=1;Encrypt=False");
+            return new SqlConnection("Data Source=10.0.39.191;Initial Catalog=QuanLyBanHang;Persist Security Info=True;User ID=win;Password=1;Encrypt=False");
 
         }
 
