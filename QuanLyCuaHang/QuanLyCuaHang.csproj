@@ -114,6 +114,9 @@
     </Compile>
     <Compile Include="Model\TaoDonHangDbContext.cs" />
     <Compile Include="Model\tblTaoDonHang.cs" />
+    <Compile Include="NhaCungCapDataSet.cs">
+      <DependentUpon>NhaCungCapDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="NhaCungCapDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
