@@ -14,8 +14,10 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace QuanLyCuaHang
 {
+
     public partial class frmLogin : Form
     {
+        private bool passTrangThai = true;
         public frmLogin()
         {
             InitializeComponent();
@@ -31,7 +33,7 @@ namespace QuanLyCuaHang
         }
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            txtUser.Focus();
+            
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
@@ -53,14 +55,31 @@ namespace QuanLyCuaHang
             {
                 errorPass.SetError(txtPassword, "Mật khẩu phải từ 6 kí tự ");
                 errorPass.GetError(txtPassword);
+                passTrangThai = false;
             }
+            else if(password.Length>15)
+            {
+                errorPass.SetError(txtPassword, "Mật khẩu quá dài");
+                errorPass.GetError(txtPassword);
+                passTrangThai = false;
+            }    
             else
             {
                 errorPass.Clear();
+                passTrangThai=true;
                
-            }    
-            string query = "EXEC TNG_Login @user,@password";
-            QueryConnection.Query.Login(query, user, password);
+            }
+            if (passTrangThai)
+            {
+                string query = "EXEC TNG_Login @user,@password";
+                QueryConnection.Query.Login(query, user, password);
+            }
+            else
+            {
+                // Thông báo người dùng mật khẩu không hợp lệ
+                errorPass.SetError(txtPassword, "Mật khẩu sai");
+                errorPass.GetError(txtPassword);
+            }
         }
 
         private void togeLuuMk_CheckedChanged(object sender, EventArgs e)
@@ -69,6 +88,8 @@ namespace QuanLyCuaHang
             Properties.Settings.Default.UserName = togeLuuMk.Checked ? txtUser.Text : string.Empty;
             Properties.Settings.Default.Save();
         }
-      
+  
+
+   
     }
 }
