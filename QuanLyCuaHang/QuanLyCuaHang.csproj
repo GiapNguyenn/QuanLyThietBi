@@ -33,14 +33,29 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>packages\FontAwesome.Sharp.6.3.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -54,17 +69,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connection\QueryConnection.cs" />
     <Compile Include="Forms\FormNhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormNhaCungCap.Designer.cs">
       <DependentUpon>FormNhaCungCap.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FormNhanVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormNhanVien.Designer.cs">
-      <DependentUpon>FormNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormSanPham.cs">
       <SubType>Form</SubType>
@@ -72,17 +82,35 @@
     <Compile Include="Forms\FormSanPham.Designer.cs">
       <DependentUpon>FormSanPham.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormTaoDonHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormTaoDonHang.Designer.cs">
-      <DependentUpon>FormTaoDonHang.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FormTrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormTrangChu.Designer.cs">
       <DependentUpon>FormTrangChu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmNhanVien.Designer.cs">
+      <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmQuanLyTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmQuanLyTaiKhoan.Designer.cs">
+      <DependentUpon>frmQuanLyTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmTaoDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmTaoDonHang.Designer.cs">
+      <DependentUpon>frmTaoDonHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -90,19 +118,32 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\TaoDonHangDbContext.cs" />
+    <Compile Include="Model\tblTaoDonHang.cs" />
+    <Compile Include="NhaCungCapDataSet.cs">
+      <DependentUpon>NhaCungCapDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NhaCungCapDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NhaCungCapDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\FormNhaCungCap.resx">
       <DependentUpon>FormNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormNhanVien.resx">
-      <DependentUpon>FormNhanVien.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSanPham.resx">
       <DependentUpon>FormSanPham.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormTaoDonHang.resx">
-      <DependentUpon>FormTaoDonHang.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmNhanVien.resx">
+      <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmTaoDonHang.resx">
+      <DependentUpon>frmTaoDonHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
@@ -117,6 +158,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="NhaCungCapDataSet.xsc">
+      <DependentUpon>NhaCungCapDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="NhaCungCapDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NhaCungCapDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NhaCungCapDataSet.xss">
+      <DependentUpon>NhaCungCapDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -136,6 +188,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\NhanVien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Thiết kế chưa có tên.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Develop.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
