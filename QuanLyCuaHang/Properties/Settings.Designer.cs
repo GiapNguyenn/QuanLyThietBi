@@ -23,17 +23,6 @@ namespace QuanLyCuaHang.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=10.0.38.68,1433;Initial Catalog=QuanLyBanHang;Persist Security Info=T" +
-            "rue;User ID=win;Password=1;Encrypt=False")]
-        public string QuanLyBanHangConnectionString {
-            get {
-                return ((string)(this["QuanLyBanHangConnectionString"]));
-            }
-        }
-        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
@@ -43,6 +32,17 @@ namespace QuanLyCuaHang.Properties {
             }
             set {
                 this["UserName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.18,1433;Initial Catalog=QuanLyBanHang;Persist Security Info" +
+            "=True;User ID=win;Password=1;Encrypt=False")]
+        public string QuanLyBanHangConnectionString {
+            get {
+                return ((string)(this["QuanLyBanHangConnectionString"]));
             }
         }
     }
