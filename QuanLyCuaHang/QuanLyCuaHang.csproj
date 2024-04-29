@@ -82,12 +82,6 @@
     <Compile Include="Forms\FormSanPham.Designer.cs">
       <DependentUpon>FormSanPham.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormTaoDonHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormTaoDonHang.Designer.cs">
-      <DependentUpon>FormTaoDonHang.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FormTrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +93,18 @@
     </Compile>
     <Compile Include="Forms\frmNhanVien.Designer.cs">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmQuanLyTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmQuanLyTaiKhoan.Designer.cs">
+      <DependentUpon>frmQuanLyTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmTaoDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmTaoDonHang.Designer.cs">
+      <DependentUpon>frmTaoDonHang.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -135,11 +141,11 @@
     <EmbeddedResource Include="Forms\FormSanPham.resx">
       <DependentUpon>FormSanPham.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormTaoDonHang.resx">
-      <DependentUpon>FormTaoDonHang.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmTaoDonHang.resx">
+      <DependentUpon>frmTaoDonHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

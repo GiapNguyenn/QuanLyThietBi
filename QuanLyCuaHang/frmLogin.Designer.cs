@@ -248,9 +248,6 @@
             // 
             this.errUser.ContainerControl = this;
             // 
-            // timer1
-            // 
-            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
