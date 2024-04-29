@@ -28,13 +28,13 @@ namespace QuanLyCuaHang.Connection
         }
         public QueryConnection()
         {
-            SqlConnection con = new SqlConnection("Data Source=192.168.1.18;Initial Catalog=QuanLyBanHang;Persist Security Info=True;User ID=win;Password=1;Encrypt=False");
+            SqlConnection con = new SqlConnection("Data Source=10.0.38.68;Initial Catalog=QuanLyBanHang;Persist Security Info=True;User ID=win;Password=1;Encrypt=False");
         }
 
-        private string connectQL = "Data Source=192.168.1.18;Initial Catalog=QuanLyBanHang;Persist Security Info=True;User ID=win;Password=1;Encrypt=False";
+        private string connectQL = "Data Source=10.0.38.68;Initial Catalog=QuanLyBanHang;Persist Security Info=True;User ID=win;Password=1;Encrypt=False";
         public SqlConnection Getcon()
         {
-            return new SqlConnection("Data Source=192.168.1.18;Initial Catalog=QuanLyBanHang;Persist Security Info=True;User ID=win;Password=1;Encrypt=False");
+            return new SqlConnection("Data Source=10.0.38.68;Initial Catalog=QuanLyBanHang;Persist Security Info=True;User ID=win;Password=1;Encrypt=False");
 
         }
 
@@ -174,59 +174,9 @@ namespace QuanLyCuaHang.Connection
                 };
                 return data;
              }
-            public DataTable LayAllDonDatHang(string query)
-            {
-                DataTable data = new DataTable();
-                using (SqlConnection connection = new SqlConnection(connectQL))
-                {
-                    connection.Open(); // Mở kết nối đến cơ sở dữ liệu
+    
 
-                    SqlCommand cmd = new SqlCommand(query, connection);
-
-                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-
-                    adapter.Fill(data);
-                    connection.Close();
-
-                };
-                return data;
-            }
-            public DataTable InsertDonHang(string query, string madh, string tenkh, string sdt, DateTime date, string diachi, string masp, int soluongmuonlay)
-            {
-                DataTable data2 = new DataTable();
-                using (SqlConnection connection = new SqlConnection(connectQL))
-                {
-                    try
-                    {
-                        connection.Open(); // Mở kết nối đến cơ sở dữ liệu
-
-                        SqlCommand cmd = new SqlCommand(query, connection);
-                        cmd.Parameters.AddWithValue("@madonhang", madh);
-                        cmd.Parameters.AddWithValue("@tenkhachhang", tenkh);
-                        cmd.Parameters.AddWithValue("@sdt", sdt);
-                        cmd.Parameters.AddWithValue("@date", date);
-                        cmd.Parameters.AddWithValue("@diachi", diachi);
-                        cmd.Parameters.AddWithValue("@masanpham", masp);
-                        cmd.Parameters.AddWithValue("@soluongmuonlay", soluongmuonlay);
-
-                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-
-                        adapter.Fill(data2);
-                        connection.Close();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Bi loi do " + ex.Message);
-                    }
-
-
-                };
-                return data2;
-            }
-
-
-
-        public DataTable TaoBang(string sql)
+            public DataTable TaoBang(string sql)
             {
                 con = Getcon();
                 SqlDataAdapter ad = new SqlDataAdapter(sql, con);

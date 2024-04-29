@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyCuaHang.Forms
 {
-    public partial class frmQuanLyTaiKhoan : Form
+    public partial class FormTaoDonHang : Form
     {
-        public frmQuanLyTaiKhoan()
+        public FormTaoDonHang()
         {
             InitializeComponent();
         }
