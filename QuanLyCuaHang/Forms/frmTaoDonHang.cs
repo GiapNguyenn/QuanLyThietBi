@@ -32,12 +32,17 @@ namespace QuanLyCuaHang.Forms
                 CbbSanPham.DisplayMember = "MaSP";
             }
         }
+        public void ThoiGianHienTai()
+        {
+            DateTime date = DateTime.Now;
+            dateThoiGian.Value = date;
+        }
 
         private void CbbSanPham_SelectedIndexChanged(object sender, EventArgs e)
         {
 
             string maSanPham = CbbSanPham.Text.ToString();
-            string s = "Data Source=192.168.1.18;Initial Catalog=QuanLyBanHang;Persist Security Info=True;User ID=win;Password=1;Encrypt=False";
+            string s = "Data Source=10.0.38.192;Initial Catalog=QuanLyBanHang;Persist Security Info=True;User ID=win;Password=1;Encrypt=False";
 
             using (SqlConnection connection = new SqlConnection(s))
             {
@@ -64,6 +69,7 @@ namespace QuanLyCuaHang.Forms
         {
             string query = "Exec LayTatCaDonDatHang";
             dataGridDatDonHang.DataSource = QueryConnection.Query.LayAllDonDatHang(query);
+            ThoiGianHienTai();
             LoadCbbMaSp();
         }
 
