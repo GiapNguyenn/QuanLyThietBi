@@ -56,7 +56,7 @@
             this.btnXoa = new FontAwesome.Sharp.IconButton();
             this.btnThem = new FontAwesome.Sharp.IconButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridDatDonHang = new System.Windows.Forms.DataGridView();
+            this.dgvTaoDonHang = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -65,7 +65,7 @@
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridDatDonHang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTaoDonHang)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -453,9 +453,9 @@
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSua.Location = new System.Drawing.Point(266, 17);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(75, 23);
+            this.btnSua.Size = new System.Drawing.Size(98, 23);
             this.btnSua.TabIndex = 5;
-            this.btnSua.Text = "&Sửa";
+            this.btnSua.Text = "&InHoaDon";
             this.btnSua.UseVisualStyleBackColor = true;
             // 
             // btnXoa
@@ -471,6 +471,7 @@
             this.btnXoa.TabIndex = 4;
             this.btnXoa.Text = "&Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -490,7 +491,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dataGridDatDonHang);
+            this.groupBox3.Controls.Add(this.dgvTaoDonHang);
             this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(0, 4);
             this.groupBox3.Name = "groupBox3";
@@ -499,13 +500,13 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách sản phẩm đã chọn ";
             // 
-            // dataGridDatDonHang
+            // dgvTaoDonHang
             // 
-            this.dataGridDatDonHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridDatDonHang.Location = new System.Drawing.Point(12, 34);
-            this.dataGridDatDonHang.Name = "dataGridDatDonHang";
-            this.dataGridDatDonHang.Size = new System.Drawing.Size(818, 176);
-            this.dataGridDatDonHang.TabIndex = 0;
+            this.dgvTaoDonHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTaoDonHang.Location = new System.Drawing.Point(12, 34);
+            this.dgvTaoDonHang.Name = "dgvTaoDonHang";
+            this.dgvTaoDonHang.Size = new System.Drawing.Size(903, 176);
+            this.dgvTaoDonHang.TabIndex = 0;
             // 
             // frmTaoDonHang
             // 
@@ -526,7 +527,7 @@
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridDatDonHang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTaoDonHang)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -559,7 +560,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private Guna.UI2.WinForms.Guna2ComboBox CbbSanPham;
-        private System.Windows.Forms.DataGridView dataGridDatDonHang;
+        private System.Windows.Forms.DataGridView dgvTaoDonHang;
         private Guna.UI2.WinForms.Guna2TextBox txtSoLuongMuonLay;
         private System.Windows.Forms.Label label10;
     }
