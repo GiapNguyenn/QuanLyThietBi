@@ -99,6 +99,7 @@ namespace QuanLyCuaHang
         private void btnTrangChu_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
+            OpenChildForm(new FormTrangChu());
         }
 
         private void btnSanPham_Click(object sender, EventArgs e)

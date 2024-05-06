@@ -56,7 +56,7 @@ namespace QuanLyCuaHang.Forms
             try
             {
                 // Tạo câu lệnh SQL để chèn dữ liệu vào CSDL với giá trị hình ảnh là chuỗi Base64
-                string sql = "INSERT INTO tblSanPham VALUES ('" + txtMaSP.Text + "','" + txtTenSP.Text + "','" + cbxHangSX.Text + "','" + cbxManhacc.Text + "','" + txtTheLoai.Text + "','" + cbxXuatXu.Text + "','" + txtGiaBan.Text + "')";
+                string sql = "INSERT INTO tblSanPham VALUES ('" + txtMaSP.Text + "','" + txtTenSP.Text + "','" + cbxHangSX.Text + "','" + cbxManhacc.Text + "',"+txtSoluong.Text+",'" + txtTheLoai.Text + "','" + cbxXuatXu.Text + "','" + txtGiaBan.Text + "')";
 
                 // Thực hiện câu lệnh SQL
                 cn.ExcuteNonQuery(sql);

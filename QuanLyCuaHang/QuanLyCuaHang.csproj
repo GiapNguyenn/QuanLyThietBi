@@ -141,6 +141,9 @@
     <EmbeddedResource Include="Forms\FormSanPham.resx">
       <DependentUpon>FormSanPham.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormTrangChu.resx">
+      <DependentUpon>FormTrangChu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,6 +216,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Develop.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\equipment-supply.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1245236087_NewTch.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0017538_Apple-iPhone-14-Pro-Max-1200x900_1600.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z5371151479780_ebe045800488cad6c1e25b6181b26bfb.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-kinkate-205926.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-stasknop-1298601.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\55868_s2421__4_.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
