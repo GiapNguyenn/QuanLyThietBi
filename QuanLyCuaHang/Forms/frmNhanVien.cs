@@ -56,7 +56,7 @@ namespace QuanLyCuaHang.Forms
                 string query = "EXEC TNG_XoaID @maNV";
                 QueryConnection.Query.deleteData(query, maNV);
                 string query2 = "EXEC TNG_TimKiemAllNhanVien";
-                dataGridNhanVien.DataSource = QueryConnection.Query.LayAllDanhSach(query2); // Chú ý sử dụng query2, không phải query
+                dataGridNhanVien.DataSource = QueryConnection.Query.LayAllDanhSach(query2);
 
             }
             else

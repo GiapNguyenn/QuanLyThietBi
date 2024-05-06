@@ -42,7 +42,7 @@ namespace QuanLyCuaHang.Forms
         {
 
             string maSanPham = CbbSanPham.Text.ToString();
-            string s = "Data Source=10.0.38.192;Initial Catalog=QuanLyBanHang;Persist Security Info=True;User ID=win;Password=1;Encrypt=False";
+            string s = "Data Source=10.0.41.190;Initial Catalog=QuanLyBanHang;Persist Security Info=True;User ID=win;Password=1;Encrypt=False";
 
             using (SqlConnection connection = new SqlConnection(s))
             {

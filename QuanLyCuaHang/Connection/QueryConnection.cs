@@ -28,13 +28,13 @@ namespace QuanLyCuaHang.Connection
         }
         public QueryConnection()
         {
-            SqlConnection con = new SqlConnection("Data Source=10.0.38.192;Initial Catalog=QuanLyBanHang;Persist Security Info=True;User ID=win;Password=1;Encrypt=False");
+            SqlConnection con = new SqlConnection("Data Source=10.0.41.190;Initial Catalog=QuanLyBanHang;Persist Security Info=True;User ID=win;Password=1;Encrypt=False");
         }
 
-        private string connectQL = "Data Source=10.0.38.192;Initial Catalog=QuanLyBanHang;Persist Security Info=True;User ID=win;Password=1;Encrypt=False";
+        private string connectQL = "Data Source=10.0.41.190;Initial Catalog=QuanLyBanHang;Persist Security Info=True;User ID=win;Password=1;Encrypt=False";
         public SqlConnection Getcon()
         {
-            return new SqlConnection("Data Source=10.0.38.192;Initial Catalog=QuanLyBanHang;Persist Security Info=True;User ID=win;Password=1;Encrypt=False");
+            return new SqlConnection("Data Source=10.0.41.190;Initial Catalog=QuanLyBanHang;Persist Security Info=True;User ID=win;Password=1;Encrypt=False");
 
         }
 
@@ -223,6 +223,70 @@ namespace QuanLyCuaHang.Connection
                 };
                 return data2;
             }
+        public DataTable LayAllTaIkhoan(string query)
+        {
+            DataTable data = new DataTable();
+            using (SqlConnection connection = new SqlConnection(connectQL))
+            {
+                connection.Open(); // Mở kết nối đến cơ sở dữ liệu
+
+                SqlCommand cmd = new SqlCommand(query, connection);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                adapter.Fill(data);
+                connection.Close();
+
+            };
+            return data;
+
+        }
+        public DataTable InsertTaiKhoan(string query,string tendangnhap,string password,string manv)
+        {
+            DataTable data2 = new DataTable();
+            using (SqlConnection connection = new SqlConnection(connectQL))
+            {
+                try
+                {
+                    connection.Open(); // Mở kết nối đến cơ sở dữ liệu
+
+                    SqlCommand cmd = new SqlCommand(query, connection);
+                    cmd.Parameters.AddWithValue("@tendangnhap",tendangnhap);
+                    cmd.Parameters.AddWithValue("@password", password);
+                    cmd.Parameters.AddWithValue("@manv", manv);
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                    adapter.Fill(data2);
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Bi loi do " + ex.Message);
+                }
+
+
+            };
+            return data2;
+        }
+        public DataTable UpdateTaiKhoan(string query,string tendangnhap,string password)
+        {
+            DataTable data4 = new DataTable();
+            using (SqlConnection connection = new SqlConnection(connectQL))
+            {
+                connection.Open(); // Mở kết nối đến cơ sở dữ liệu
+
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@tendangnhap",tendangnhap);
+                cmd.Parameters.AddWithValue("@password",password);
+              
+                cmd.ExecuteNonQuery();
+
+                connection.Close();
+
+            };
+            return data4;
+        }
 
 
 
