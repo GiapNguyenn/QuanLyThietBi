@@ -223,6 +223,70 @@ namespace QuanLyCuaHang.Connection
                 };
                 return data2;
             }
+        public DataTable LayAllTaIkhoan(string query)
+        {
+            DataTable data = new DataTable();
+            using (SqlConnection connection = new SqlConnection(connectQL))
+            {
+                connection.Open(); // Mở kết nối đến cơ sở dữ liệu
+
+                SqlCommand cmd = new SqlCommand(query, connection);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                adapter.Fill(data);
+                connection.Close();
+
+            };
+            return data;
+
+        }
+        public DataTable InsertTaiKhoan(string query,string tendangnhap,string password,string manv)
+        {
+            DataTable data2 = new DataTable();
+            using (SqlConnection connection = new SqlConnection(connectQL))
+            {
+                try
+                {
+                    connection.Open(); // Mở kết nối đến cơ sở dữ liệu
+
+                    SqlCommand cmd = new SqlCommand(query, connection);
+                    cmd.Parameters.AddWithValue("@tendangnhap",tendangnhap);
+                    cmd.Parameters.AddWithValue("@password", password);
+                    cmd.Parameters.AddWithValue("@manv", manv);
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                    adapter.Fill(data2);
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Bi loi do " + ex.Message);
+                }
+
+
+            };
+            return data2;
+        }
+        public DataTable UpdateTaiKhoan(string query,string tendangnhap,string password)
+        {
+            DataTable data4 = new DataTable();
+            using (SqlConnection connection = new SqlConnection(connectQL))
+            {
+                connection.Open(); // Mở kết nối đến cơ sở dữ liệu
+
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@tendangnhap",tendangnhap);
+                cmd.Parameters.AddWithValue("@password",password);
+              
+                cmd.ExecuteNonQuery();
+
+                connection.Close();
+
+            };
+            return data4;
+        }
 
 
 

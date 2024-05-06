@@ -124,6 +124,7 @@ namespace QuanLyCuaHang
         private void btnKhoHang_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color5);
+            OpenChildForm(new frmQuanLyTaiKhoan());
         }
 
         private void btnNhanVien_Click(object sender, EventArgs e)

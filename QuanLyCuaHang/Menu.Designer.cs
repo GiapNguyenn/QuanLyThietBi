@@ -36,6 +36,7 @@
             this.btnSanPham = new FontAwesome.Sharp.IconButton();
             this.btnTrangChu = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnHome = new System.Windows.Forms.PictureBox();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.btnMinized = new FontAwesome.Sharp.IconButton();
@@ -45,13 +46,12 @@
             this.iconCurrentChildFor = new FontAwesome.Sharp.IconPictureBox();
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panelDeskTop = new System.Windows.Forms.Panel();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildFor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -102,7 +102,7 @@
             this.btnKhoHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKhoHang.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKhoHang.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnKhoHang.IconChar = FontAwesome.Sharp.IconChar.Warehouse;
+            this.btnKhoHang.IconChar = FontAwesome.Sharp.IconChar.PeopleLine;
             this.btnKhoHang.IconColor = System.Drawing.Color.Gainsboro;
             this.btnKhoHang.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnKhoHang.IconSize = 32;
@@ -112,7 +112,7 @@
             this.btnKhoHang.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnKhoHang.Size = new System.Drawing.Size(220, 60);
             this.btnKhoHang.TabIndex = 5;
-            this.btnKhoHang.Text = "Kho hàng ";
+            this.btnKhoHang.Text = "Tài khoản";
             this.btnKhoHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKhoHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnKhoHang.UseVisualStyleBackColor = false;
@@ -225,6 +225,19 @@
             this.panelLogo.Size = new System.Drawing.Size(220, 140);
             this.panelLogo.TabIndex = 0;
             // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(13)))), ((int)(((byte)(41)))));
+            this.guna2PictureBox1.BorderRadius = 10;
+            this.guna2PictureBox1.Image = global::QuanLyCuaHang.Properties.Resources.Develop;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(220, 140);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 1;
+            this.guna2PictureBox1.TabStop = false;
+            // 
             // btnHome
             // 
             this.btnHome.Location = new System.Drawing.Point(0, 0);
@@ -333,19 +346,6 @@
             this.panelDeskTop.Size = new System.Drawing.Size(909, 583);
             this.panelDeskTop.TabIndex = 3;
             // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(13)))), ((int)(((byte)(41)))));
-            this.guna2PictureBox1.BorderRadius = 10;
-            this.guna2PictureBox1.Image = global::QuanLyCuaHang.Properties.Resources.Develop;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(220, 140);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 1;
-            this.guna2PictureBox1.TabStop = false;
-            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -360,11 +360,11 @@
             this.Load += new System.EventHandler(this.Menu_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildFor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
