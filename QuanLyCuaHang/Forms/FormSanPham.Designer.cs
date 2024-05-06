@@ -57,9 +57,6 @@
             this.btnThem = new FontAwesome.Sharp.IconButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvSanpham = new System.Windows.Forms.DataGridView();
-            this.sanPhamDataSet = new QuanLyCuaHang.SanPhamDataSet();
-            this.tblSanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tblSanPhamTableAdapter = new QuanLyCuaHang.SanPhamDataSetTableAdapters.tblSanPhamTableAdapter();
             this.maSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenSanPhamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hangSanXuatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +64,11 @@
             this.theLoaiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.xuatXuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.giaBanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblSanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sanPhamDataSet = new QuanLyCuaHang.SanPhamDataSet();
+            this.tblSanPhamTableAdapter = new QuanLyCuaHang.SanPhamDataSetTableAdapters.tblSanPhamTableAdapter();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtSoluong = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -75,8 +77,8 @@
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanpham)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sanPhamDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblSanPhamBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sanPhamDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -100,6 +102,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtSoluong);
             this.groupBox1.Controls.Add(this.txtGiaBan);
             this.groupBox1.Controls.Add(this.cbxXuatXu);
             this.groupBox1.Controls.Add(this.txtTheLoai);
@@ -107,6 +110,7 @@
             this.groupBox1.Controls.Add(this.cbxHangSX);
             this.groupBox1.Controls.Add(this.txtTenSP);
             this.groupBox1.Controls.Add(this.txtMaSP);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -426,20 +430,6 @@
             this.dgvSanpham.TabIndex = 0;
             this.dgvSanpham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSanpham_CellContentClick);
             // 
-            // sanPhamDataSet
-            // 
-            this.sanPhamDataSet.DataSetName = "SanPhamDataSet";
-            this.sanPhamDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tblSanPhamBindingSource
-            // 
-            this.tblSanPhamBindingSource.DataMember = "tblSanPham";
-            this.tblSanPhamBindingSource.DataSource = this.sanPhamDataSet;
-            // 
-            // tblSanPhamTableAdapter
-            // 
-            this.tblSanPhamTableAdapter.ClearBeforeFill = true;
-            // 
             // maSPDataGridViewTextBoxColumn
             // 
             this.maSPDataGridViewTextBoxColumn.DataPropertyName = "MaSP";
@@ -487,6 +477,37 @@
             this.giaBanDataGridViewTextBoxColumn.HeaderText = "Giá Bán";
             this.giaBanDataGridViewTextBoxColumn.Name = "giaBanDataGridViewTextBoxColumn";
             // 
+            // tblSanPhamBindingSource
+            // 
+            this.tblSanPhamBindingSource.DataMember = "tblSanPham";
+            this.tblSanPhamBindingSource.DataSource = this.sanPhamDataSet;
+            // 
+            // sanPhamDataSet
+            // 
+            this.sanPhamDataSet.DataSetName = "SanPhamDataSet";
+            this.sanPhamDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tblSanPhamTableAdapter
+            // 
+            this.tblSanPhamTableAdapter.ClearBeforeFill = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(551, 202);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(73, 17);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Số lượng:";
+            // 
+            // txtSoluong
+            // 
+            this.txtSoluong.Location = new System.Drawing.Point(631, 202);
+            this.txtSoluong.Name = "txtSoluong";
+            this.txtSoluong.Size = new System.Drawing.Size(188, 20);
+            this.txtSoluong.TabIndex = 22;
+            // 
             // FormSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -506,8 +527,8 @@
             this.panel1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanpham)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sanPhamDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblSanPhamBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sanPhamDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -550,5 +571,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn theLoaiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn xuatXuDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn giaBanDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox txtSoluong;
+        private System.Windows.Forms.Label label8;
     }
 }

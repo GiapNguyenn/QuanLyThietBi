@@ -63,9 +63,49 @@ namespace QuanLyCuaHang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _0017538_Apple_iPhone_14_Pro_Max_1200x900_1600 {
+            get {
+                object obj = ResourceManager.GetObject("_0017538_Apple_iPhone_14_Pro_Max_1200x900_1600", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1245236087_NewTch {
+            get {
+                object obj = ResourceManager.GetObject("_1245236087_NewTch", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _55868_s2421__4_ {
+            get {
+                object obj = ResourceManager.GetObject("_55868_s2421__4_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Develop {
             get {
                 object obj = ResourceManager.GetObject("Develop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap download__1_ {
+            get {
+                object obj = ResourceManager.GetObject("download__1_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -86,6 +126,26 @@ namespace QuanLyCuaHang.Properties {
         internal static System.Drawing.Bitmap NhanVien {
             get {
                 object obj = ResourceManager.GetObject("NhanVien", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pexels_kinkate_205926 {
+            get {
+                object obj = ResourceManager.GetObject("pexels_kinkate_205926", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pexels_stasknop_1298601 {
+            get {
+                object obj = ResourceManager.GetObject("pexels_stasknop_1298601", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
